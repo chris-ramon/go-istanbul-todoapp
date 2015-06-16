@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+  <div class="jumbotron text-center">
+    <h2>TodoApp!</h2>
+    <p>
+      <form class="todo-form" ng-submit="handleSubmit()">
+        <input ng-model="newTodo.text" type="text" class="form-control" placeholder="Todo ..." autofocus>
+        <button class="btn btn-success" type="submit">Add</button>
+      </form>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="todo in todos">
+      <div class="thumbnail">
+        <div class="caption">
+          <div class="checkbox">
+            <label>
+              <input ng-change="onStatusChange(todo)" ng-model="todo.status" type="checkbox"> {{todo.text}}
+            </label>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
